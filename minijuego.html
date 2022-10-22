@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Juego</title>
+  <script>
+    // Metodo para que la pc eliga aleatoriamente.
+    function aleatorio(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    //Metodo de elección.
+    function eleccion(play) {
+      let result = "";
+
+      if (play == 1) {
+        result = "Piedra ✊🏽";
+      } else if (play == 2) {
+        result = "Papel ✋🏽"
+      } else if (play == 3) {
+        result = "Tijera ✌🏽"
+      } else {
+        result = "Mala elección 😔";
+      }
+      return result;
+    }
+
+    //  1 es piedra, 2 es papel y 3 es tijera.
+    let player = 0
+    let pc = aleatorio(1, 3);
+
+    player = prompt("Por favor elige: 1 para piedra, 2 para papel y 3 para tijera");
+
+    alert("PC eligio: " + eleccion(pc));
+    alert("Tú eligiste: " + eleccion(player));
+
+    // Aqui elige el jugador
+    /*if (player == 1) {
+      alert("Eligiste ✊🏽");
+    } else if (player == 2) {
+      alert("Eligiste ✋🏽");
+    } else if (player == 3) {
+      alert("Eligiste ✌🏽");
+    } else {
+      alert("Eligiste PERDER, ¿miedo? 😈")
+    }*/
+
+    // Aqui elige la pc
+    /*if (pc == 1) {
+      alert("PC eligio ✊🏽");
+    } else if (pc == 2) {
+      alert("PC eligio ✋🏽");
+    } else if (pc == 3) {
+      alert("PC eligio ✌🏽");
+    }*/
+
+    // COMBATE
+    if (pc == player) {
+      alert("EMPATE");
+    } else if ((player == 1 && pc == 3) || (player == 2 && pc == 1) || (player == 3 && pc == 2)) {
+      alert("GANASTE");
+    } else {
+      alert("PERDISTE");
+    }
+
+    /*
+    if (pc == jugador) {
+      alert("EMPATE");
+    } else if (jugador == 1 && pc == 3) {
+      alert("GANASTE");
+    } else if (jugador == 2 && pc == 1) {
+      alert("GANASTE");
+    } else if (jugador == 3 && pc == 2) {
+      alert("GANASTE")
+    } else {
+      alert("PERDISTE");
+    }
+    */
+  </script>
+</head>
+
+<body>
+  <h2>Piedra, Papel y Tijeras</h2>
+  <p>Recarga pagina!!!</p>
+</body>
+
+</html>
