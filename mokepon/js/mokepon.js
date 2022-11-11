@@ -6,16 +6,16 @@ let attackEnemy;
 // * Función para ejecutar cada boton en la pagina.
 function startplay() {
     // * Variable.
-    const buttonPetPlayer = document.getElementById('button-pet');
+    let buttonPetPlayer = document.getElementById('button-pet');
 
     buttonPetPlayer.addEventListener('click', selectPetPlayer);
 
     // * Eventos.
-    const buttonFire = document.getElementById('button-fire');
+    let buttonFire = document.getElementById('button-fire');
     buttonFire.addEventListener('click', attackFire);
-    const buttonWater = document.getElementById('button-water');
+    let buttonWater = document.getElementById('button-water');
     buttonWater.addEventListener('click', attackWater);
-    const buttonEarth = document.getElementById('button-earth');
+    let buttonEarth = document.getElementById('button-earth');
     buttonEarth.addEventListener('click', attackEarth);
 }
 
@@ -57,8 +57,8 @@ function selectPetPlayer() {
 
 // * Función para mascotas del enemigo.
 function selectPetEnemy() {
-    const petRandom = aleatorio(1,6);
-    const spanPetEnemy = document.getElementById('pet-enemy');
+    let petRandom = aleatorio(1,6);
+    let spanPetEnemy = document.getElementById('pet-enemy');
 
     if (petRandom == 1) {
         spanPetEnemy.innerHTML = 'Hipodoge';
@@ -91,7 +91,7 @@ function attackEarth() {
 
 // * Función en donde se elige aleatoriamente el ataque del enemigo.
 function attackRandomEnemy() {
-    const attackRandom = aleatorio(1,3);
+    let attackRandom = aleatorio(1,3);
 
     if (attackRandom == 1) {
         attackEnemy = 'FIRE';
@@ -100,17 +100,26 @@ function attackRandomEnemy() {
     } else {
         attackEnemy = 'EARTH';
     }
+    combat();
+}
 
-    createMessage();
+function combat() {
+    if (attackEnemy == attackPlayer) {
+        createMessage("TIE");
+    } else if ((attackPlayer == 'FIRE' && attackEnemy == 'EARTH') || (attackPlayer == 'WATER' && attackEnemy == 'FIRE') || (attackPlayer == 'EARTH' && attackEnemy == 'WATER')) {
+        createMessage("YOU WON");
+    } else {
+        createMessage("YOU LOST");
+    }
 }
 
 // * Función para que apareca un historial del combate.
-function createMessage() {
+function createMessage(result) {
     // * Variable.
-    const sectionMessage = document.getElementById('messages');
+    let sectionMessage = document.getElementById('messages');
 
-    const paragraph = document.createElement('p');
-    paragraph.innerHTML = 'Your pet attacked with ' + attackPlayer + ', the enemy\'s pet attacked with '+ attackEnemy +' - PENDIENTE';
+    let paragraph = document.createElement('p');
+    paragraph.innerHTML = 'Your pet attacked with ' + attackPlayer + ', the enemy\'s pet attacked with '+ attackEnemy + ': ' + result;
 
     sectionMessage.appendChild(paragraph);
 }
