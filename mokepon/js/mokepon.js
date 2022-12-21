@@ -1,3 +1,5 @@
+//Toda la logia del juego. By: Francisco Delgado Martinez.
+
 // * Variables globales.
 let attackPlayer;
 let attackEnemy;
