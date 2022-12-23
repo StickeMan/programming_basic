@@ -11,7 +11,6 @@ let livesEnemy = 3;
 function startplay() {
     // * Variable.
     let buttonPetPlayer = document.getElementById('button-pet');
-
     buttonPetPlayer.addEventListener('click', selectPetPlayer);
 
     // * Eventos.
@@ -21,6 +20,9 @@ function startplay() {
     buttonWater.addEventListener('click', attackWater);
     let buttonEarth = document.getElementById('button-earth');
     buttonEarth.addEventListener('click', attackEarth);
+
+    let buttonRestart = document.getElementById('button-restart');
+    buttonRestart.addEventListener('click', restartGame);
 }
 
 // * Función para mascotas del jugador.
@@ -155,6 +157,18 @@ function createMessageEnd(resultEnd) {
     paragraph.innerHTML = resultEnd;
 
     sectionMessage.appendChild(paragraph);
+
+    let buttonFire = document.getElementById('button-fire');
+    buttonFire.disabled = true;
+    let buttonWater = document.getElementById('button-water');
+    buttonWater.disabled = true;
+    let buttonEarth = document.getElementById('button-earth');
+    buttonEarth.disabled = true;
+}
+
+// Función para reiniciar el juego.
+function restartGame() {
+    location.reload();
 }
 
 // * Función para elegir aleatoriamente la mascota y el ataque.
