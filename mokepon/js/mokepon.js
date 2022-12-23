@@ -107,6 +107,7 @@ function attackRandomEnemy() {
     combat();
 }
 
+// Función del combate.
 function combat() {
     let spanLivesPlayer = document.getElementById('lives-player');
     let spanLivesEnemy = document.getElementById('lives-enemy');
@@ -122,6 +123,17 @@ function combat() {
         livesPlayer--
         spanLivesPlayer.innerHTML = livesPlayer;
     }
+
+    reviewLives();
+}
+
+// Función para revisar las vidas.
+function reviewLives() {
+    if (livesEnemy == 0) {
+        createMessageEnd("Congratulations! You won 🎉🎉");
+    } else if (livesPlayer == 0) {
+        createMessageEnd("Sorry, You lost 😔");
+    }
 }
 
 // * Función para que apareca un historial del combate.
@@ -131,6 +143,16 @@ function createMessage(result) {
 
     let paragraph = document.createElement('p');
     paragraph.innerHTML = 'Your pet attacked with ' + attackPlayer + ', the enemy\'s pet attacked with '+ attackEnemy + ': ' + result;
+
+    sectionMessage.appendChild(paragraph);
+}
+
+function createMessageEnd(resultEnd) {
+    // * Variable.
+    let sectionMessage = document.getElementById('messages');
+
+    let paragraph = document.createElement('p');
+    paragraph.innerHTML = resultEnd;
 
     sectionMessage.appendChild(paragraph);
 }
