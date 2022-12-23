@@ -3,9 +3,11 @@
 // * Variables globales.
 let attackPlayer;
 let attackEnemy;
+let livesPlayer = 3;
+let livesEnemy = 3;
 
 // * Iniciar juego.
-// * Función para ejecutar cada boton en la pagina.
+// * Función para ejecutar cada boton en la página.
 function startplay() {
     // * Variable.
     let buttonPetPlayer = document.getElementById('button-pet');
@@ -106,12 +108,19 @@ function attackRandomEnemy() {
 }
 
 function combat() {
+    let spanLivesPlayer = document.getElementById('lives-player');
+    let spanLivesEnemy = document.getElementById('lives-enemy');
+
     if (attackEnemy == attackPlayer) {
         createMessage("TIE");
     } else if ((attackPlayer == 'FIRE' && attackEnemy == 'EARTH') || (attackPlayer == 'WATER' && attackEnemy == 'FIRE') || (attackPlayer == 'EARTH' && attackEnemy == 'WATER')) {
         createMessage("YOU WON");
+        livesEnemy--
+        spanLivesEnemy.innerHTML = livesEnemy;
     } else {
         createMessage("YOU LOST");
+        livesPlayer--
+        spanLivesPlayer.innerHTML = livesPlayer;
     }
 }
 
