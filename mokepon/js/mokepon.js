@@ -7,8 +7,16 @@ let livesPlayer = 3;
 let livesEnemy = 3;
 
 // * Iniciar juego.
-// * Función para ejecutar cada boton en la página.
+// * Función para ejecutar cada botón en la página.
 function startplay() {
+    // Esto solo dejará visible las mascotas y lo demás no se mostrará.
+    let sectionSelectAttack = document.getElementById('select-attack');
+    sectionSelectAttack.style.display = 'none';
+
+    // Se deja de mostrar el botón de reinicio.
+    let sectionSelectRestart = document.getElementById('restart');
+    sectionSelectRestart.style.display = 'none';
+
     // * Variable.
     let buttonPetPlayer = document.getElementById('button-pet');
     buttonPetPlayer.addEventListener('click', selectPetPlayer);
@@ -27,6 +35,14 @@ function startplay() {
 
 // * Función para mascotas del jugador.
 function selectPetPlayer() {
+    // Esto dejará de mostrar la sección de elegir tu mascota.
+    let sectionSelectPet = document.getElementById('select-pet');
+    sectionSelectPet.style.display = 'none';
+
+    // Esto hará que vuelva aparecer los botones de ataque.
+    let sectionSelectAttack = document.getElementById('select-attack');
+    sectionSelectAttack.style.display = 'block';
+
     // * Variables.
     const inputHipodoge = document.getElementById('Hipodoge');
     const inputCapipepo = document.getElementById('Capipepo');
@@ -37,22 +53,22 @@ function selectPetPlayer() {
     const spanPetPlayer = document.getElementById('pet-player');
 
     if (inputHipodoge.checked) {
-        alert('You select to Hipodoge.');
+        //alert('You select to Hipodoge.');
         spanPetPlayer.innerHTML = 'Hipodoge';
     } else if (inputCapipepo.checked) {
-        alert('You select to Capipepo.');
+        //alert('You select to Capipepo.');
         spanPetPlayer.innerHTML = 'Capipepo';
     } else if (inputRatigueya.checked) {
-        alert('You select to Ratigueya.');
+        //alert('You select to Ratigueya.');
         spanPetPlayer.innerHTML = 'Ratigueya';
     } else if (inputLangostelvis.checked) {
-        alert('You select to Langostelvis.');
+        //alert('You select to Langostelvis.');
         spanPetPlayer.innerHTML = 'Langostelvis';
     } else if (inputTucapalma.checked) {
-        alert('You select to Tucapalma.');
+        //alert('You select to Tucapalma.');
         spanPetPlayer.innerHTML = 'Tucapalma';
     } else if (inputPydos.checked) {
-        alert('You select to Pydos.');
+        //alert('You select to Pydos.');
         spanPetPlayer.innerHTML = 'Pydos';
     } else {
         alert('You must select a pet!');
@@ -138,7 +154,7 @@ function reviewLives() {
     }
 }
 
-// * Función para que apareca un historial del combate.
+// * Función para que aparezca un historial del combate.
 function createMessage(result) {
     // * Variable.
     let sectionMessage = document.getElementById('messages');
@@ -164,6 +180,10 @@ function createMessageEnd(resultEnd) {
     buttonWater.disabled = true;
     let buttonEarth = document.getElementById('button-earth');
     buttonEarth.disabled = true;
+
+    // Muestra de nuevo el botón de reiniciar el juego.
+    let sectionSelectRestart = document.getElementById('restart');
+    sectionSelectRestart.style.display = 'block';
 }
 
 // Función para reiniciar el juego.
