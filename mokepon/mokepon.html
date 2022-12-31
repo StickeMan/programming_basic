@@ -5,37 +5,39 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MOKEPON!</title>
+    <title>MOKEPON GAME</title>
+    <link rel="shortcut icon" href="image/estacion-de-juegos.png">
     <script src="./js/mokepon.js"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<h1 id="title">MOKEPON! 🔥💧🌱</h1>
 
 <section id="select-pet">
-    <h2>Choose your pet:</h2>
+    <h1 class="title">MOKEPON!</h1>
 
-    <label for="Hipodoge">Hipodoge</label><input type="radio" name="pet" id="Hipodoge" />
-    <label for="Capipepo">Capipepo</label><input type="radio" name="pet" id="Capipepo" />
-    <label for="Ratigueya">Ratigueya</label><input type="radio" name="pet" id="Ratigueya" />
-    <label for="Langostelvis">Langostelvis</label><input type="radio" name="pet" id="Langostelvis" />
-    <label for="Tucapalma">Tucapalma</label><input type="radio" name="pet" id="Tucapalma" />
-    <label for="Pydos">Pydos</label><input type="radio" name="pet" id="Pydos" />
+    <h2 class="subtitle">choose your pet:</h2>
+
+    <label class="card-mokepon-1" for="Hipodoge">Hipodoge</label><input type="radio" name="pet" id="Hipodoge"/>
+    <label class="card-mokepon-1" for="Capipepo">Capipepo</label><input type="radio" name="pet" id="Capipepo"/>
+    <label class="card-mokepon-1" for="Ratigueya">Ratigueya</label><input type="radio" name="pet" id="Ratigueya"/>
+    <label class="card-mokepon-1" for="Langostelvis">Langostelvis</label><input type="radio" name="pet" id="Langostelvis"/>
+    <label class="card-mokepon-1" for="Tucapalma">Tucapalma</label><input type="radio" name="pet" id="Tucapalma"/>
 
     <button id="button-pet">Select</button>
 </section>
 
 <section id="select-attack">
-    <h2>Choose your attack:</h2>
+    <h1 class="title">MOKEPON!</h1>
+
+    <h2 class="subtitle">Choose your attack:</h2>
 
     <p>Your pet <span id="pet-player"></span> has <span id="lives-player">3</span> lives</p>
     <p>The enemy's pet <span id="pet-enemy"></span> has <span id="lives-enemy">3</span> lives</p>
 
-
     <p>
         <button id="button-fire"> Fire 🔥</button>
-        <button id="button-water"> Water 💧 </button>
-        <button id="button-earth"> Earth 🌱 </button>
+        <button id="button-water"> Water 💧</button>
+        <button id="button-earth"> Earth 🌱</button>
     </p>
 </section>
 

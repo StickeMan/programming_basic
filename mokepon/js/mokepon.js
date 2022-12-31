@@ -49,7 +49,6 @@ function selectPetPlayer() {
     const inputRatigueya = document.getElementById('Ratigueya');
     const inputLangostelvis = document.getElementById('Langostelvis');
     const inputTucapalma = document.getElementById('Tucapalma');
-    const inputPydos = document.getElementById('Pydos');
     const spanPetPlayer = document.getElementById('pet-player');
 
     if (inputHipodoge.checked) {
@@ -67,9 +66,6 @@ function selectPetPlayer() {
     } else if (inputTucapalma.checked) {
         //alert('You select to Tucapalma.');
         spanPetPlayer.innerHTML = 'Tucapalma';
-    } else if (inputPydos.checked) {
-        //alert('You select to Pydos.');
-        spanPetPlayer.innerHTML = 'Pydos';
     } else {
         alert('You must select a pet!');
     }
@@ -79,7 +75,7 @@ function selectPetPlayer() {
 
 // * Función para mascotas del enemigo.
 function selectPetEnemy() {
-    let petRandom = aleatorio(1,6);
+    let petRandom = aleatorio(1,5);
     let spanPetEnemy = document.getElementById('pet-enemy');
 
     if (petRandom == 1) {
@@ -90,10 +86,8 @@ function selectPetEnemy() {
         spanPetEnemy.innerHTML = 'Ratigueya';
     } else if (petRandom == 4) {
         spanPetEnemy.innerHTML = 'Langostelvis';
-    } else if (petRandom == 5) {
-        spanPetEnemy.innerHTML = 'Tucapalma';
     } else {
-        spanPetEnemy.innerHTML = 'Pydos';
+        spanPetEnemy.innerHTML = 'Tucapalma';
     }
 }
 
