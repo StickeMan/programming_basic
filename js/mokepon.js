@@ -41,7 +41,7 @@ function selectPetPlayer() {
 
     // Esto hará que vuelva aparecer los botones de ataque.
     let sectionSelectAttack = document.getElementById('select-attack');
-    sectionSelectAttack.style.display = 'block';
+    sectionSelectAttack.style.display = 'flex';
 
     // * Variables.
     const inputHipodoge = document.getElementById('Hipodoge');

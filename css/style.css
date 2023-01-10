@@ -115,3 +115,22 @@ body {
     color: aliceblue;
     cursor: pointer;
 }
+
+#select-attack {
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-attack {
+    font-family: CrashBandicootText, fantasy;
+    background: #BF9742;
+    cursor: pointer;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: transparent;
+    width: 100px;
+    color: orangered;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
