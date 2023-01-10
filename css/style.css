@@ -5,7 +5,8 @@
 
 body {
     /*background-image: url("https://picfiles.alphacoders.com/586/586625.jpg");*/
-    background-image: url(../image/battle.jpg);
+    /*background-image: url(../image/battle.jpg);*/
+    background-color: #603601;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -17,9 +18,9 @@ body {
     text-align: center;
     width: 350px;
     height: 50px;
-    margin: 30px auto;
+    margin: 80px auto;
     font-family: CrashBandicootTitle, serif;
-    font-size: xxx-large;
+    font-size: 70px;
 
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
@@ -33,12 +34,12 @@ body {
 }
 
 .subtitle {
-    color: white;
+    color: #F9F9F9;
     text-align: center;
     width: 350px;
     height: 50px;
-    font-family: CrashBandicootTitle, serif;
-    font-size: medium;
+    font-family: CrashBandicootText, serif;
+    font-size: 18px;
 }
 @keyframes spin {
     from {
@@ -63,36 +64,32 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 85vh;
-    border: 1px solid black;
-    border-radius: 15px;
-    width: 55vh;
-    margin: 50px auto;
-    background: rgb(2,0,36);
-    background: radial-gradient(circle, rgb(59, 35, 8) 0%, rgb(59, 35, 8) 50%, rgb(91, 50, 6) 100%);
 }
 
-.card-mokepon-1 {
-    /*width: 150px;
-    height: 50px;
-    background-color: aquamarine;
+.cards {
+    display: flex;
+    gap: 20px
+}
+
+.card-mokepon {
+    width: 280px;
+    height: 140px;
+    background: #BF9742;
     padding: 10px;
     box-sizing: border-box;
-    margin: 10px;
-    border: 2px solid hotpink;*/
+    border-radius: 20px;
     display: flex;
     justify-content: center;
-    border: 2px white;
+    align-items: center;
+}
+
+.card-mokepon img {
     width: 80px;
-    height: 50px;
-    padding: 10px;
-    box-sizing: border-box;
-    margin: 10px;
 }
 
 #select-pet label {
     font-family: CrashBandicootText, fantasy;
-    width: 150px;
+    width: 200px;
     text-align: center;
     padding: 10px;
     margin-top: 10px;
@@ -102,11 +99,18 @@ body {
     cursor: pointer;
 }
 
+#select-pet input {
+    display: none;
+}
+
 #select-pet button {
     font-family: CrashBandicootTitle, serif;
     font-size: 20px;
+    width: 180px;
+    height: 40px;
     margin-bottom: 25px;
-    margin-top: 25px;
+    margin-top: 30px;
+    border-radius: 20px;
     background-color: black;
     color: aliceblue;
     cursor: pointer;

@@ -47,8 +47,6 @@ function selectPetPlayer() {
     const inputHipodoge = document.getElementById('Hipodoge');
     const inputCapipepo = document.getElementById('Capipepo');
     const inputRatigueya = document.getElementById('Ratigueya');
-    const inputLangostelvis = document.getElementById('Langostelvis');
-    const inputTucapalma = document.getElementById('Tucapalma');
     const spanPetPlayer = document.getElementById('pet-player');
 
     if (inputHipodoge.checked) {
@@ -60,13 +58,8 @@ function selectPetPlayer() {
     } else if (inputRatigueya.checked) {
         //alert('You select to Ratigueya.');
         spanPetPlayer.innerHTML = 'Ratigueya';
-    } else if (inputLangostelvis.checked) {
-        //alert('You select to Langostelvis.');
-        spanPetPlayer.innerHTML = 'Langostelvis';
-    } else if (inputTucapalma.checked) {
-        //alert('You select to Tucapalma.');
-        spanPetPlayer.innerHTML = 'Tucapalma';
-    } else {
+    }
+    else {
         alert('You must select a pet!');
     }
 
@@ -75,19 +68,15 @@ function selectPetPlayer() {
 
 // * Función para mascotas del enemigo.
 function selectPetEnemy() {
-    let petRandom = aleatorio(1,5);
+    let petRandom = aleatorio(1,3);
     let spanPetEnemy = document.getElementById('pet-enemy');
 
     if (petRandom == 1) {
         spanPetEnemy.innerHTML = 'Hipodoge';
     } else if (petRandom == 2) {
         spanPetEnemy.innerHTML = 'Capipepo';
-    } else if (petRandom == 3) {
-        spanPetEnemy.innerHTML = 'Ratigueya';
-    } else if (petRandom == 4) {
-        spanPetEnemy.innerHTML = 'Langostelvis';
     } else {
-        spanPetEnemy.innerHTML = 'Tucapalma';
+        spanPetEnemy.innerHTML = 'Ratigueya';
     }
 }
 

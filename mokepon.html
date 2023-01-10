@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -17,11 +17,25 @@
 
     <h2 class="subtitle">choose your pet:</h2>
 
-    <label class="card-mokepon-1" for="Hipodoge">Hipodoge</label><input type="radio" name="pet" id="Hipodoge"/>
-    <label class="card-mokepon-1" for="Capipepo">Capipepo</label><input type="radio" name="pet" id="Capipepo"/>
-    <label class="card-mokepon-1" for="Ratigueya">Ratigueya</label><input type="radio" name="pet" id="Ratigueya"/>
-    <label class="card-mokepon-1" for="Langostelvis">Langostelvis</label><input type="radio" name="pet" id="Langostelvis"/>
-    <label class="card-mokepon-1" for="Tucapalma">Tucapalma</label><input type="radio" name="pet" id="Tucapalma"/>
+    <div class="cards">
+        <label class="card-mokepon" for="Hipodoge">
+            <p>Hipodoge</p>
+            <img src="image/hipodoge_attack.png" alt="Hipodoge">
+        </label>
+        <input type="radio" name="pet" id="Hipodoge"/>
+
+        <label class="card-mokepon" for="Capipepo">
+            <p>Capipepo</p>
+            <img src="image/capipepo_attack.png" alt="Capipepo">
+        </label>
+        <input type="radio" name="pet" id="Capipepo"/>
+
+        <label class="card-mokepon" for="Ratigueya">
+            <p>Ratigueya</p>
+            <img src="image/ratigueya_attack.png" alt="Ratigueya">
+        </label>
+        <input type="radio" name="pet" id="Ratigueya"/>
+    </div>
 
     <button id="button-pet">Select</button>
 </section>
@@ -31,21 +45,24 @@
 
     <h2 class="subtitle">Choose your attack:</h2>
 
-    <p>Your pet <span id="pet-player"></span> has <span id="lives-player">3</span> lives</p>
-    <p>The enemy's pet <span id="pet-enemy"></span> has <span id="lives-enemy">3</span> lives</p>
-
-    <p>
+    <div>
         <button id="button-fire"> Fire 🔥</button>
         <button id="button-water"> Water 💧</button>
         <button id="button-earth"> Earth 🌱</button>
-    </p>
+    </div>
+
+    <div>
+        <section id="messages"></section>
+
+        <section id="restart">
+            <button id="button-restart">Restart</button>
+        </section>
+    </div>
+
+    <div>
+        <p>Your pet <span id="pet-player"></span> has <span id="lives-player">3</span> lives</p>
+        <p>The enemy's pet <span id="pet-enemy"></span> has <span id="lives-enemy">3</span> lives</p>
+    </div>
 </section>
-
-<section id="messages"></section>
-
-<section id="restart">
-    <button id="button-restart">Restart</button>
-</section>
-
 </body>
 </html>
